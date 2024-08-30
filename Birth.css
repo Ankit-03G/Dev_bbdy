@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     margin: 0;
     padding: 0;
@@ -7,11 +8,13 @@ body {
     overflow-x: hidden;
 }
 
+/* Container */
 .container {
     text-align: center;
     padding: 20px;
 }
 
+/* Title */
 .title {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -19,48 +22,44 @@ body {
     animation: fadeInDown 2s ease-in-out;
 }
 
+/* Wishing Text */
 .wish-text {
     font-size: 1.5rem;
     color: #4A90E2;
     animation: fadeInUp 2s ease-in-out;
 }
 
+/* Shayari Section */
 .shayari-section {
-   margin-top: 20px;
+    margin-top: 20px;
 }
 
 .shayari-text {
-   font-size: 1.5rem;
-   color: #ea68ef;
-   margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ea68ef;
+    margin-bottom: 20px;
 }
 
-.speak-button, .stop-button {
-   padding: 10px 20px;
-   font-size: 1.2rem;
-   background-color: #4CAF50;
-   color: white;
-   border: none;
-   border-radius: 5px;
-   cursor: pointer;
-   margin: 10px;
-}
-
-.speak-button:hover, .stop-button:hover {
-   background-color: #388E3C;
-}
-
-
-
-.reveal-button {
-    margin-top: 30px;
+/* Buttons */
+.speak-button, .stop-button, .reveal-button {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #FF6B6B;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.speak-button:hover, .stop-button:hover, .reveal-button:hover {
+    background-color: #388E3C;
+}
+
+/* Reveal Button (Specific) */
+.reveal-button {
+    background-color: #FF6B6B;
     animation: fadeInUp 2s ease-in-out;
 }
 
@@ -68,33 +67,34 @@ body {
     background-color: #E45757;
 }
 
+/* Moments Section */
 .moments-section {
     margin-top: 40px;
 }
 
+/* Animated Text */
 #element {
     color: rgb(9, 238, 238);
     font-size: 28px;
 }
+
 #element1 {
     color: #FF6B6B;
     font-size: 20px;
 }
-p{
-   color: rgb(201, 43, 43);
-   font-size: 22px;
-   font-weight: bold;
+
+p {
+    color: rgb(201, 43, 43);
+    font-size: 22px;
+    font-weight: bold;
 }
+
+/* Photo Gallery */
 .photo-gallery {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-}
-
-.photo-gallery :hover {
-    border-radius: 10px;
-    box-shadow: 0 4px 6px #E45757;
 }
 
 .photo-frame {
@@ -104,17 +104,12 @@ p{
     width: 230px;
     height: 230px;
     transform: scale(0.9);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
-.photo-frame:hover,
-.photo-frame:focus {
+.photo-frame:hover {
     transform: scale(1.1);
-    box-shadow: 20px 20px 60px #6a4272,inset -20px -20px 60px rgba(255,255,255,0.246);
-}
-
-.photo-frame:active {
-    transform: scale(1.05);
+    box-shadow: 20px 20px 60px #6a4272, inset -20px -20px 60px rgba(255, 255, 255, 0.246);
 }
 
 .photo-frame img {
@@ -123,6 +118,7 @@ p{
     object-fit: cover;
 }
 
+/* Video Section */
 .video-section {
     display: flex;
     justify-content: center;
@@ -138,16 +134,17 @@ p{
     border-radius: 10px;
 }
 
+/* Hidden Elements */
 .hidden {
     display: none;
 }
 
+/* Keyframes */
 @keyframes fadeInDown {
     0% {
         opacity: 0;
         transform: translateY(-20px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -159,13 +156,13 @@ p{
         opacity: 0;
         transform: translateY(20px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Confetti */
 .confetti-piece {
     position: absolute;
     width: 10px;
@@ -175,12 +172,4 @@ p{
     opacity: 0.7;
 }
 
-@keyframes fall {
-    0% {
-        transform: translateY(-50px) rotate(0deg);
-    }
-
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-    }
-}
+@key
