@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="Birth.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Wishing Part -->
+        <div class="wish-section">
+            <h1 class="title">Happy Birthday, [Dev🎂]🥳!</h1>
+
+            <p class="wish-text">Wishing you a day filled with <span id="element"></span></p>
+            <p>Happy Birthday Buddy🥳🎂 <br><span id="element1"></span></p>
+
+            <button id="revealButton" class="reveal-button">See Best Moments</button>
+        </div>
+
+        <!-- Shayari Section -->
+         <div class="shayari-section hidden" id="shayariSection">
+            <p class="shayari-text">
+                On your special day, I wish you joy, <br>
+                As bright as the sun, like a shining toy. <br>
+                May laughter fill your days with cheer, <br>
+                And your heart feel love that's always near. <br>
+                Happy Birthday, my dear friend, <br>
+                May your happiness never end! <br>
+                <br>
+                <br>
+                Happy Birthday, buddy! 
+                Another year has passed, but your wisdom level is still the same—zero!  Lets celebrate by eating
+                cake, so at least we can have something sweet, because life isnot giving us any! And donot worry about
+                age, just think of it as 'experience'... though that experience doesnot really count unless it comes
+                with free cake!
+            </p>
+        </div>
+
+        <button id="speakButton" class="speak-button">Speak Shayari</button>
+        <button id="stopButton" class="stop-button hidden">Stop Speaking</button> 
+
+
+        <!-- Hidden Best Moments Section -->
+        <div id="momentsSection" class="moments-section hidden">
+            <div class="photo-gallery">
+                <div class="photo-frame">
+                    <img src="2.jpg" alt="Memory 2">
+                </div>
+                <div class="photo-frame">
+                    <img src="1.jpg" alt="Memory 1">
+                </div>
+                <div class="photo-frame">
+                    <img src="3.jpg" alt="Memory 3">
+                </div>
+                <div class="photo-frame">
+                    <img src="4.jpg" alt="Memory 4">
+                </div>
+                <div class="photo-frame">
+                    <img src="5.jpg" alt="Memory 5">
+                </div>
+                <div class="photo-frame">
+                    <img src="6.jpg" alt="Memory 6">
+                </div>
+                <div class="photo-frame">
+                    <img src="7.jpg" alt="Memory 7">
+                </div>
+                <div class="photo-frame">
+                    <img src="8.jpg" alt="Memory 8">
+                </div>
+                <div class="photo-frame">
+                    <img src="9.jpg" alt="Memory 9">
+                </div>
+                <div class="photo-frame">
+                    <img src="10.jpg" alt="Memory 10">
+                </div>
+                <div class="photo-frame">
+                    <img src="11.jpg" alt="Memory 11">
+                </div>
+                <div class="photo-frame">
+                    <img src="12.jpg" alt="Memory 12">
+                </div>
+                <div class="photo-frame">
+                    <img src="13.jpg" alt="Memory 13">
+                </div>
+                <div class="photo-frame">
+                    <img src="14.jpg" alt="Memory 14">
+                </div>
+
+            </div>
+            <h1>Masti Time...</h1>
+            <div class="video-section">
+                <video src="1.mp4" controls></video>
+                <video src="2.mp4" controls></video>
+                <video src="3.mp4" controls></video>
+                <!-- Add more videos as needed -->
+            </div>
+        </div>
+
+
+        <!-- Confetti Effect -->
+        <div class="confetti"></div>
+    </div>
+   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['love', 'laughter', 'and unforgettable memories!'],
+            typeSpeed: 50,
+        });
+        var typed = new Typed('#element1', {
+            strings: ['I hope your birthday is just like you–fun, sweet, and full of love!', 'From the bottom of my heart, you are the most amazing friend', '& Another year has passed but your wisdom level is still the same—zero! 😜 Lets celebrate by eating cake so at least we can have something sweet because life isnot giving us any! And donot worry about age.. just think of it as experience... though that experience doesnot really count unless it comes with free cake 🍻🎂'],
+            typeSpeed: 50,
+        });
+
+    </script> 
+    <script src="Birth.js"></script>
+</body>
+
+</html>
