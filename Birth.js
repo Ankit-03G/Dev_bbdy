@@ -1,29 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Create the confetti effect
     createConfetti();
 
-    // Reveal Moments Section on Button Click
-    const revealButton = document.getElementById('revealButton');
-    const momentsSection = document.getElementById('momentsSection');
-
-    revealButton.addEventListener('click', function() {
-        momentsSection.classList.toggle('hidden');
-        revealButton.classList.toggle('hidden');
-    });
-
-    function createConfetti() {
-        const confettiContainer = document.querySelector('.confetti');
-        for (let i = 0; i < 100; i++) {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti-piece');
-            confetti.style.left = `${Math.random() * 100}%`;
-            confetti.style.animationDelay = `${Math.random() * 2}s`;
-            confettiContainer.appendChild(confetti);
-        }
-    }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
+    // Grab the buttons and sections
     const revealButton = document.getElementById('revealButton');
     const momentsSection = document.getElementById('momentsSection');
     const speakButton = document.getElementById('speakButton');
@@ -33,12 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let speechSynthesisUtterance = null;
 
+    // Reveal Moments Section on Button Click
     revealButton.addEventListener('click', function() {
         momentsSection.classList.remove('hidden');
         momentsSection.scrollIntoView({ behavior: 'smooth' });
         revealButton.style.display = 'none';
     });
 
+    // Speak Shayari when button is clicked
     speakButton.addEventListener('click', function() {
         if (speechSynthesisUtterance) {
             window.speechSynthesis.cancel();
@@ -51,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         speakButton.classList.add('hidden');
     });
 
+    // Stop speaking and hide the shayari section
     stopButton.addEventListener('click', function() {
         if (speechSynthesisUtterance) {
             window.speechSynthesis.cancel();
@@ -59,4 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
         stopButton.classList.add('hidden');
         speakButton.classList.remove('hidden');
     });
+
+    // Function to create the confetti effect
+    function createConfetti() {
+        const confettiContainer = document.querySelector('.confetti');
+        for (let i = 0; i < 100; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti-piece');
+            confetti.style.left = `${Math.random() * 100}%`;
+            confetti.style.animationDelay = `${Math.random() * 2}s`;
+            confettiContainer.appendChild(confetti);
+        }
+    }
 });
