@@ -54,39 +54,7 @@
                 <div class="photo-frame">
                     <img src="3.jpg" alt="Memory 3">
                 </div>
-                <div class="photo-frame">
-                    <img src="4.jpg" alt="Memory 4">
-                </div>
-                <div class="photo-frame">
-                    <img src="5.jpg" alt="Memory 5">
-                </div>
-                <div class="photo-frame">
-                    <img src="6.jpg" alt="Memory 6">
-                </div>
-                <div class="photo-frame">
-                    <img src="7.jpg" alt="Memory 7">
-                </div>
-                <div class="photo-frame">
-                    <img src="8.jpg" alt="Memory 8">
-                </div>
-                <div class="photo-frame">
-                    <img src="9.jpg" alt="Memory 9">
-                </div>
-                <div class="photo-frame">
-                    <img src="10.jpg" alt="Memory 10">
-                </div>
-                <div class="photo-frame">
-                    <img src="11.jpg" alt="Memory 11">
-                </div>
-                <div class="photo-frame">
-                    <img src="12.jpg" alt="Memory 12">
-                </div>
-                <div class="photo-frame">
-                    <img src="13.jpg" alt="Memory 13">
-                </div>
-                <div class="photo-frame">
-                    <img src="14.jpg" alt="Memory 14">
-                </div>
+                <!-- Add more photos as necessary -->
             </div>
             <h1>Masti Time...</h1>
             <div class="video-section">
@@ -105,7 +73,7 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             createConfetti();
 
             const revealButton = document.getElementById('revealButton');
@@ -118,42 +86,42 @@
             let speechSynthesisUtterance = null;
 
             // Typed.js initialization for animated text
-            var typed1 = new Typed('#element', {
+            new Typed('#element', {
                 strings: ['love', 'laughter', 'and unforgettable memories!'],
                 typeSpeed: 50,
             });
-            var typed2 = new Typed('#element1', {
+
+            new Typed('#element1', {
                 strings: [
                     'I hope your birthday is just like you–fun, sweet, and full of love!',
                     'From the bottom of my heart, you are the most amazing friend',
-                    '& Another year has passed but your wisdom level is still the same—zero! 😜 Let’s celebrate by eating cake so at least we can have something sweet because life isn’t giving us any! And don’t worry about age... just think of it as experience... though that experience doesn’t really count unless it comes with free cake 🍻🎂'
+                    'Another year has passed but your wisdom level is still the same—zero! 😜 Let’s celebrate by eating cake so at least we can have something sweet because life isn’t giving us any! And don’t worry about age... just think of it as experience... though that experience doesn’t really count unless it comes with free cake 🍻🎂'
                 ],
                 typeSpeed: 50,
             });
 
-            revealButton.addEventListener('click', function() {
+            revealButton.addEventListener('click', function () {
                 momentsSection.classList.remove('hidden');
                 momentsSection.scrollIntoView({ behavior: 'smooth' });
                 revealButton.style.display = 'none';
             });
 
-            speakButton.addEventListener('click', function() {
+            speakButton.addEventListener('click', function () {
                 if (speechSynthesisUtterance) {
                     window.speechSynthesis.cancel();
                 }
                 shayariSection.classList.remove('hidden');
                 speechSynthesisUtterance = new SpeechSynthesisUtterance(shayariText);
-                speechSynthesisUtterance.lang = 'en-US'; // Set the language to English
+                speechSynthesisUtterance.lang = 'en-US';
                 window.speechSynthesis.speak(speechSynthesisUtterance);
                 stopButton.classList.remove('hidden');
                 speakButton.classList.add('hidden');
             });
 
-            stopButton.addEventListener('click', function() {
+            stopButton.addEventListener('click', function () {
                 if (speechSynthesisUtterance) {
                     window.speechSynthesis.cancel();
                 }
-                shayariSection.classList.add('hidden');
                 stopButton.classList.add('hidden');
                 speakButton.classList.remove('hidden');
             });
