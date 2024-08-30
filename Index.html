@@ -32,7 +32,7 @@
                 <br>
                 <br>
                 Happy Birthday, buddy! 
-                Another year has passed, but your wisdom level is still the same—zero! Let’s celebrate by eating
+                Another year has passed, but your wisdom level is still the same—zero! Let's celebrate by eating
                 cake, so at least we can have something sweet, because life isn’t giving us any! And don’t worry about
                 age, just think of it as 'experience'... though that experience doesn’t really count unless it comes
                 with free cake!
@@ -40,7 +40,7 @@
         </div>
 
         <button id="speakButton" class="speak-button">Speak Shayari</button>
-        <button id="stopButton" class="stop-button hidden">Stop Speaking</button>
+        <button id="stopButton" class="stop-button hidden">Stop Speaking</button> 
 
         <!-- Hidden Best Moments Section -->
         <div id="momentsSection" class="moments-section hidden">
@@ -54,7 +54,39 @@
                 <div class="photo-frame">
                     <img src="3.jpg" alt="Memory 3">
                 </div>
-                <!-- Add more photos as necessary -->
+                <div class="photo-frame">
+                    <img src="4.jpg" alt="Memory 4">
+                </div>
+                <div class="photo-frame">
+                    <img src="5.jpg" alt="Memory 5">
+                </div>
+                <div class="photo-frame">
+                    <img src="6.jpg" alt="Memory 6">
+                </div>
+                <div class="photo-frame">
+                    <img src="7.jpg" alt="Memory 7">
+                </div>
+                <div class="photo-frame">
+                    <img src="8.jpg" alt="Memory 8">
+                </div>
+                <div class="photo-frame">
+                    <img src="9.jpg" alt="Memory 9">
+                </div>
+                <div class="photo-frame">
+                    <img src="10.jpg" alt="Memory 10">
+                </div>
+                <div class="photo-frame">
+                    <img src="11.jpg" alt="Memory 11">
+                </div>
+                <div class="photo-frame">
+                    <img src="12.jpg" alt="Memory 12">
+                </div>
+                <div class="photo-frame">
+                    <img src="13.jpg" alt="Memory 13">
+                </div>
+                <div class="photo-frame">
+                    <img src="14.jpg" alt="Memory 14">
+                </div>
             </div>
             <h1>Masti Time...</h1>
             <div class="video-section">
@@ -69,76 +101,24 @@
         <div class="confetti"></div>
     </div>
 
-    <!-- Typed.js library -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="Birth.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            createConfetti();
+        var typed = new Typed('#element', {
+            strings: ['love', 'laughter', and unforgettable memories!'],
+            typeSpeed: 50,
+        });
 
-            const revealButton = document.getElementById('revealButton');
-            const momentsSection = document.getElementById('momentsSection');
-            const speakButton = document.getElementById('speakButton');
-            const stopButton = document.getElementById('stopButton');
-            const shayariSection = document.getElementById('shayariSection');
-            const shayariText = document.querySelector('.shayari-text').innerText;
-
-            let speechSynthesisUtterance = null;
-
-            // Typed.js initialization for animated text
-            new Typed('#element', {
-                strings: ['love', 'laughter', 'and unforgettable memories!'],
-                typeSpeed: 50,
-            });
-
-            new Typed('#element1', {
-                strings: [
-                    'I hope your birthday is just like you–fun, sweet, and full of love!',
-                    'From the bottom of my heart, you are the most amazing friend',
-                    'Another year has passed but your wisdom level is still the same—zero! 😜 Let’s celebrate by eating cake so at least we can have something sweet because life isn’t giving us any! And don’t worry about age... just think of it as experience... though that experience doesn’t really count unless it comes with free cake 🍻🎂'
-                ],
-                typeSpeed: 50,
-            });
-
-            revealButton.addEventListener('click', function () {
-                momentsSection.classList.remove('hidden');
-                momentsSection.scrollIntoView({ behavior: 'smooth' });
-                revealButton.style.display = 'none';
-            });
-
-            speakButton.addEventListener('click', function () {
-                if (speechSynthesisUtterance) {
-                    window.speechSynthesis.cancel();
-                }
-                shayariSection.classList.remove('hidden');
-                speechSynthesisUtterance = new SpeechSynthesisUtterance(shayariText);
-                speechSynthesisUtterance.lang = 'en-US';
-                window.speechSynthesis.speak(speechSynthesisUtterance);
-                stopButton.classList.remove('hidden');
-                speakButton.classList.add('hidden');
-            });
-
-            stopButton.addEventListener('click', function () {
-                if (speechSynthesisUtterance) {
-                    window.speechSynthesis.cancel();
-                }
-                stopButton.classList.add('hidden');
-                speakButton.classList.remove('hidden');
-            });
-
-            function createConfetti() {
-                const confettiContainer = document.querySelector('.confetti');
-                for (let i = 0; i < 100; i++) {
-                    const confetti = document.createElement('div');
-                    confetti.classList.add('confetti-piece');
-                    confetti.style.left = `${Math.random() * 100}%`;
-                    confetti.style.animationDelay = `${Math.random() * 2}s`;
-                    confettiContainer.appendChild(confetti);
-                }
-            }
+        var typed = new Typed('#element1', {
+            strings: [
+                'I hope your birthday is just like you–fun, sweet, and full of love!',
+                'From the bottom of my heart, you are the most amazing friend',
+                'Another year has passed but your wisdom level is still the same—zero! 😜 Let’s celebrate by eating cake so at least we can have something sweet because life isn’t giving us any! And don’t worry about age, just think of it as experience... though that experience doesn’t really count unless it comes with free cake 🍻🎂'
+            ],
+            typeSpeed: 50,
         });
     </script>
-    <script src="Birth.js"></script>
 </body>
 
 </html>
