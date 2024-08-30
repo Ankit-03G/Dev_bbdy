@@ -21,7 +21,7 @@
         </div>
 
         <!-- Shayari Section -->
-         <div class="shayari-section hidden" id="shayariSection">
+        <div class="shayari-section hidden" id="shayariSection">
             <p class="shayari-text">
                 On your special day, I wish you joy, <br>
                 As bright as the sun, like a shining toy. <br>
@@ -32,16 +32,15 @@
                 <br>
                 <br>
                 Happy Birthday, buddy! 
-                Another year has passed, but your wisdom level is still the same—zero!  Lets celebrate by eating
-                cake, so at least we can have something sweet, because life isnot giving us any! And donot worry about
-                age, just think of it as 'experience'... though that experience doesnot really count unless it comes
+                Another year has passed, but your wisdom level is still the same—zero! Let’s celebrate by eating
+                cake, so at least we can have something sweet, because life isn’t giving us any! And don’t worry about
+                age, just think of it as 'experience'... though that experience doesn’t really count unless it comes
                 with free cake!
             </p>
         </div>
 
         <button id="speakButton" class="speak-button">Speak Shayari</button>
-        <button id="stopButton" class="stop-button hidden">Stop Speaking</button> 
-
+        <button id="stopButton" class="stop-button hidden">Stop Speaking</button>
 
         <!-- Hidden Best Moments Section -->
         <div id="momentsSection" class="moments-section hidden">
@@ -88,7 +87,6 @@
                 <div class="photo-frame">
                     <img src="14.jpg" alt="Memory 14">
                 </div>
-
             </div>
             <h1>Masti Time...</h1>
             <div class="video-section">
@@ -99,23 +97,79 @@
             </div>
         </div>
 
-
         <!-- Confetti Effect -->
         <div class="confetti"></div>
     </div>
-   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Typed.js library -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
     <script>
-        var typed = new Typed('#element', {
-            strings: ['love', 'laughter', 'and unforgettable memories!'],
-            typeSpeed: 50,
-        });
-        var typed = new Typed('#element1', {
-            strings: ['I hope your birthday is just like you–fun, sweet, and full of love!', 'From the bottom of my heart, you are the most amazing friend', '& Another year has passed but your wisdom level is still the same—zero! 😜 Lets celebrate by eating cake so at least we can have something sweet because life isnot giving us any! And donot worry about age.. just think of it as experience... though that experience doesnot really count unless it comes with free cake 🍻🎂'],
-            typeSpeed: 50,
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            createConfetti();
 
-    </script> 
+            const revealButton = document.getElementById('revealButton');
+            const momentsSection = document.getElementById('momentsSection');
+            const speakButton = document.getElementById('speakButton');
+            const stopButton = document.getElementById('stopButton');
+            const shayariSection = document.getElementById('shayariSection');
+            const shayariText = document.querySelector('.shayari-text').innerText;
+
+            let speechSynthesisUtterance = null;
+
+            // Typed.js initialization for animated text
+            var typed1 = new Typed('#element', {
+                strings: ['love', 'laughter', 'and unforgettable memories!'],
+                typeSpeed: 50,
+            });
+            var typed2 = new Typed('#element1', {
+                strings: [
+                    'I hope your birthday is just like you–fun, sweet, and full of love!',
+                    'From the bottom of my heart, you are the most amazing friend',
+                    '& Another year has passed but your wisdom level is still the same—zero! 😜 Let’s celebrate by eating cake so at least we can have something sweet because life isn’t giving us any! And don’t worry about age... just think of it as experience... though that experience doesn’t really count unless it comes with free cake 🍻🎂'
+                ],
+                typeSpeed: 50,
+            });
+
+            revealButton.addEventListener('click', function() {
+                momentsSection.classList.remove('hidden');
+                momentsSection.scrollIntoView({ behavior: 'smooth' });
+                revealButton.style.display = 'none';
+            });
+
+            speakButton.addEventListener('click', function() {
+                if (speechSynthesisUtterance) {
+                    window.speechSynthesis.cancel();
+                }
+                shayariSection.classList.remove('hidden');
+                speechSynthesisUtterance = new SpeechSynthesisUtterance(shayariText);
+                speechSynthesisUtterance.lang = 'en-US'; // Set the language to English
+                window.speechSynthesis.speak(speechSynthesisUtterance);
+                stopButton.classList.remove('hidden');
+                speakButton.classList.add('hidden');
+            });
+
+            stopButton.addEventListener('click', function() {
+                if (speechSynthesisUtterance) {
+                    window.speechSynthesis.cancel();
+                }
+                shayariSection.classList.add('hidden');
+                stopButton.classList.add('hidden');
+                speakButton.classList.remove('hidden');
+            });
+
+            function createConfetti() {
+                const confettiContainer = document.querySelector('.confetti');
+                for (let i = 0; i < 100; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti-piece');
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.animationDelay = `${Math.random() * 2}s`;
+                    confettiContainer.appendChild(confetti);
+                }
+            }
+        });
+    </script>
     <script src="Birth.js"></script>
 </body>
 
